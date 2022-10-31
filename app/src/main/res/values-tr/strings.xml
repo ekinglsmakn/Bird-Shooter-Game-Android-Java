@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bird Shooter Game</string>
+    <string name="kill_them_all">hepsini vur</string>
+    <string name="highest_score">en yüksek skor</string>
+    <string name="start">başla</string>
+</resources>
