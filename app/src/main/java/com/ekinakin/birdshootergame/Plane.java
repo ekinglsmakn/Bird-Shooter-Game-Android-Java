@@ -6,6 +6,7 @@ import static com.ekinakin.birdshootergame.GameView.screenSizeY;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 
 public class Plane {
     public int x = 0;
@@ -16,13 +17,9 @@ public class Plane {
     public boolean goUp = false;
     public int fire = 0;
     public int fireCount = 1;
-    Bitmap plane1;
-    Bitmap plane2;
-    Bitmap planefire;
-    Bitmap planefire2;
-    Bitmap planefire3;
-    Bitmap planefire4;
-    Bitmap planefire5;
+    Bitmap plane1, plane2;
+    Bitmap planefire, planefire2, planefire3, planefire4, planefire5;
+    Bitmap crush;
     private GameView gameView;
 
     public Plane(GameView gameView, int screenY, Resources res) {
@@ -42,6 +39,9 @@ public class Plane {
 
         plane1 = Bitmap.createScaledBitmap(plane1, widthPlane, heightPlane, false);
         plane2 = Bitmap.createScaledBitmap(plane2, widthPlane, heightPlane, false);
+
+        crush = BitmapFactory.decodeResource(res, R.drawable.crush);
+        crush = Bitmap.createScaledBitmap(crush, widthPlane, heightPlane, false);
 
         planefire = BitmapFactory.decodeResource(res, R.drawable.planefire);
         planefire2 = BitmapFactory.decodeResource(res, R.drawable.planefire2);
@@ -92,5 +92,13 @@ public class Plane {
         } else
             wingMove--;
         return plane2;
+    }
+
+    Rect getCrushControl(){
+        return new Rect(x, y, x+widthPlane, y+heightPlane);
+    }
+
+    Bitmap getCrush(){
+        return crush;
     }
 }

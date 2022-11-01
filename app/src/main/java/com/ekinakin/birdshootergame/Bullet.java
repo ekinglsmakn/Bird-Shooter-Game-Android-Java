@@ -6,10 +6,13 @@ import static com.ekinakin.birdshootergame.GameView.screenSizeY;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 
 public class Bullet {
     int x = 0;
     int y = 0;
+    int widthBullet;
+    int heightBullet;
     Bitmap bullet;
 
     Bullet(Resources res){
@@ -24,5 +27,9 @@ public class Bullet {
 
         bullet = Bitmap.createScaledBitmap(bullet, widthBullet, heightBullet, false);
 
+    }
+
+    Rect getCrushControl(){
+        return new Rect(x, y, x+widthBullet, y+heightBullet);
     }
 }
