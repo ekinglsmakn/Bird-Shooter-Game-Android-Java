@@ -1,2 +1,2 @@
 # Bird-Shooter-Game-Android-Java
- Android 2D game coded with java 
+Emulator: Nexus 5X API 28, KitKat 19 x86 Android 4.4
